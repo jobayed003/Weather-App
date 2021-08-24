@@ -1,0 +1,132 @@
+#main {
+  display: flex;
+  color: white;
+  background: #100e1d;
+}
+
+.main-weather {
+  width: 370px;
+  background-color: #1e213a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 2rem;
+
+  &__details {
+    padding-top: 5rem;
+    text-align: center;
+  }
+  &__search-area {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+
+    & input {
+      background: #6e707a;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 20px;
+      padding: 0.5rem;
+      outline: none;
+      &::placeholder {
+        transform: translateY(20deg);
+        color: white;
+      }
+    }
+    & i {
+      background-color: #6e707a;
+      padding: 1rem;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__celcius {
+    font-family: "Besley", serif;
+    font-size: 6rem;
+    margin-top: 2rem;
+  }
+  &__more-details {
+    font-family: "Besley", serif;
+    font-size: 2rem;
+    color: #6e707a;
+  }
+}
+
+.card-container {
+  padding: 3.25rem 5.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.card {
+  width: 150px;
+  padding: 1.125rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1e213a;
+}
+.card img {
+  width: 4rem;
+  margin: 0.625rem 0 1.875rem 0;
+}
+
+.card > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.highlights {
+  padding: 0 5.5rem 3.25rem 5.5rem;
+}
+
+.highlights h3 {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
+  font-family: "Raleway", serif;
+}
+
+.highlights-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  .highlight {
+    background-color: #1e213a;
+    text-align: center;
+    padding: 1.375rem;
+    margin-top: 2rem;
+    p {
+      font-family: "Raleway", serif;
+    }
+    h2 {
+      font-size: 4rem;
+      span {
+        font-size: 2.25rem;
+      }
+    }
+    span {
+    }
+  }
+}
+
+// .humidity-status {
+// }
+
+// .mark {
+// }
+
+// .progress-bar {
+//   & > .range {
+//   }
+//   & > .percent {
+//   }
+// }
