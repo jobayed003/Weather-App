@@ -1,0 +1,31 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Landing page for weather-app",
+  "browserslist": "last 10 versions",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss css/style.css --watch",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile": "sass sass/main.scss css/style.comp.css",
+    "concat": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css ",
+    "prefix": "postcss css/style.concat.css --use autoprefixer -o css/style.prefix.css",
+    "compress": "sass css/style.prefix.css css/style.css --style compressed",
+    "build": "npm-run-all compile concat prefix compress"
+  },
+  "author": "Jobayed",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.3.1",
+    "concat": "^1.0.3",
+    "concurrently": "^5.3.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.26.10"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "postcss": "^8.3.6",
+    "regenerator-runtime": "^0.13.7"
+  }
+}
