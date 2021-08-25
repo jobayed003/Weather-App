@@ -1,9 +1,3 @@
-#main {
-  display: flex;
-  color: white;
-  background: #100e1d;
-}
-
 .main-weather {
   width: 370px;
   background-color: #1e213a;
@@ -15,6 +9,12 @@
   &__details {
     padding-top: 5rem;
     text-align: center;
+
+    & .weather-status {
+      color: #a09fb1;
+      font-weight: 600;
+      font-size: 2.25rem;
+    }
   }
   &__search-area {
     display: flex;
@@ -34,7 +34,7 @@
         color: white;
       }
     }
-    & i {
+    & .icon {
       background-color: #6e707a;
       padding: 1rem;
       width: 40px;
@@ -44,89 +44,125 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
     }
   }
 
   &__celcius {
-    font-family: "Besley", serif;
     font-size: 6rem;
-    margin-top: 2rem;
+    font-weight: 500;
+    margin-block: 2rem;
+
+    & .gray {
+      font-size: 4rem;
+      color: #88869d;
+      cursor: pointer;
+    }
   }
-  &__more-details {
-    font-family: "Besley", serif;
-    font-size: 2rem;
-    color: #6e707a;
+  & .date {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 2rem 0;
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: #88869d;
+
+    & span {
+      margin-inline: 1rem;
+    }
   }
-}
 
-.card-container {
-  padding: 3.25rem 5.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26px;
-}
-
-.card {
-  width: 150px;
-  padding: 1.125rem 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #1e213a;
-}
-.card img {
-  width: 4rem;
-  margin: 0.625rem 0 1.875rem 0;
-}
-
-.card > div {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.highlights {
-  padding: 0 5.5rem 3.25rem 5.5rem;
-}
-
-.highlights h3 {
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
-  font-family: "Raleway", serif;
+  & .location {
+    display: flex;
+    justify-content: center;
+    font-size: 1.125rem;
+    color: #88869d;
+    & i {
+      font-weight: 900;
+      margin-right: 0.5626rem;
+    }
+  }
 }
 
 .highlights-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  .highlight {
+  gap: 25px;
+  color: #e7e7eb;
+  text-decoration: none solid rgb(231, 231, 235);
+
+  & .highlight {
     background-color: #1e213a;
     text-align: center;
     padding: 1.375rem;
     margin-top: 2rem;
-    p {
-      font-family: "Raleway", serif;
+
+    & p {
+      padding: 1rem;
+    }
+    & .flex {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1.5rem;
+
+      & p {
+        padding: 0;
+      }
+      & span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border-radius: 50%;
+
+        background: #6e707a;
+        & i {
+          font-size: 12px;
+        }
+      }
     }
     h2 {
       font-size: 4rem;
       span {
+        font-weight: 500;
         font-size: 2.25rem;
       }
-    }
-    span {
+      & .bold {
+        font-weight: 700;
+        font-size: 4rem;
+      }
     }
   }
 }
 
-// .humidity-status {
-// }
+.humidity-status {
+  margin-top: 2rem;
+  color: #a09fb1;
 
-// .mark {
-// }
+  .mark {
+    display: flex;
+    justify-content: space-between;
+    color: #a09fb1;
+    font-weight: 700;
+  }
 
-// .progress-bar {
-//   & > .range {
-//   }
-//   & > .percent {
-//   }
-// }
+  & > .percent {
+    text-align: right;
+  }
+
+  & .progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e7e7eb;
+    border-radius: 80px;
+    & > .range {
+      width: 84%;
+      height: 100%;
+      border-radius: 80px;
+      background: #ffec65;
+    }
+  }
+}

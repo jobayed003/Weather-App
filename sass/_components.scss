@@ -1,0 +1,44 @@
+#main {
+  display: flex;
+  color: white;
+  background: #100e1d;
+}
+
+.card-container {
+  padding: 3.25rem 5.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.card {
+  width: 150px;
+  padding: 1.125rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1e213a;
+  & img {
+    width: 4rem;
+    margin: 0.625rem 0 1.875rem 0;
+  }
+
+  & div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  & .night {
+    color: #88869d;
+  }
+}
+
+.highlights {
+  padding: 0 5.5rem 3.25rem 5.5rem;
+
+  & h3 {
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+  }
+}

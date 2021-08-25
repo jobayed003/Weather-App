@@ -2,12 +2,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 #main {
   display: flex;
   color: white;
   background: #100e1d;
+}
+
+.card-container {
+  padding: 3.25rem 5.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.card {
+  width: 150px;
+  padding: 1.125rem 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1e213a;
+}
+.card img {
+  width: 4rem;
+  margin: 0.625rem 0 1.875rem 0;
+}
+.card div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.card .night {
+  color: #88869d;
+}
+
+.highlights {
+  padding: 0 5.5rem 3.25rem 5.5rem;
+}
+.highlights h3 {
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .main-weather {
@@ -21,6 +59,11 @@
 .main-weather__details {
   padding-top: 5rem;
   text-align: center;
+}
+.main-weather__details .weather-status {
+  color: #a09fb1;
+  font-weight: 600;
+  font-size: 2.25rem;
 }
 .main-weather__search-area {
   display: flex;
@@ -40,7 +83,7 @@
   transform: translateY(20deg);
   color: white;
 }
-.main-weather__search-area i {
+.main-weather__search-area .icon {
   background-color: #6e707a;
   padding: 1rem;
   width: 40px;
@@ -50,60 +93,46 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .main-weather__celcius {
-  font-family: "Besley", serif;
   font-size: 6rem;
-  margin-top: 2rem;
+  font-weight: 500;
+  margin-block: 2rem;
 }
-.main-weather__more-details {
-  font-family: "Besley", serif;
-  font-size: 2rem;
-  color: #6e707a;
+.main-weather__celcius .gray {
+  font-size: 4rem;
+  color: #88869d;
+  cursor: pointer;
 }
-
-.card-container {
-  padding: 3.25rem 5.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 26px;
-}
-
-.card {
-  width: 150px;
-  padding: 1.125rem 1.25rem;
+.main-weather .date {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: #1e213a;
+  margin: 3rem 0 2rem 0;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #88869d;
 }
-
-.card img {
-  width: 4rem;
-  margin: 0.625rem 0 1.875rem 0;
+.main-weather .date span {
+  margin-inline: 1rem;
 }
-
-.card > div {
-  width: 100%;
+.main-weather .location {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 1.125rem;
+  color: #88869d;
 }
-
-.highlights {
-  padding: 0 5.5rem 3.25rem 5.5rem;
-}
-
-.highlights h3 {
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
-  font-family: "Raleway", serif;
+.main-weather .location i {
+  font-weight: 900;
+  margin-right: 0.5626rem;
 }
 
 .highlights-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 25px;
+  color: #e7e7eb;
+  text-decoration: none solid #e7e7eb;
 }
 .highlights-container .highlight {
   background-color: #1e213a;
@@ -112,13 +141,66 @@
   margin-top: 2rem;
 }
 .highlights-container .highlight p {
-  font-family: "Raleway", serif;
+  padding: 1rem;
+}
+.highlights-container .highlight .flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.highlights-container .highlight .flex p {
+  padding: 0;
+}
+.highlights-container .highlight .flex span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: #6e707a;
+}
+.highlights-container .highlight .flex span i {
+  font-size: 12px;
 }
 .highlights-container .highlight h2 {
   font-size: 4rem;
 }
 .highlights-container .highlight h2 span {
+  font-weight: 500;
   font-size: 2.25rem;
+}
+.highlights-container .highlight h2 .bold {
+  font-weight: 700;
+  font-size: 4rem;
+}
+
+.humidity-status {
+  margin-top: 2rem;
+  color: #a09fb1;
+}
+.humidity-status .mark {
+  display: flex;
+  justify-content: space-between;
+  color: #a09fb1;
+  font-weight: 700;
+}
+.humidity-status > .percent {
+  text-align: right;
+}
+.humidity-status .progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #e7e7eb;
+  border-radius: 80px;
+}
+.humidity-status .progress-bar > .range {
+  width: 84%;
+  height: 100%;
+  border-radius: 80px;
+  background: #ffec65;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="images/map-marker-alt-solid.svg" crossorigin="anonymous">
     <link rel="stylesheet" href=" https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-    <link rel="shortcut icon" type="image/png" href="images/weather.png">
-    <link href="https://fonts.googleapis.com/css2?family=Besley:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;500;600;700&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -30,12 +28,19 @@
             <div class="main-weather__details">
                 <img class="weather-icon" src="assets/Shower.png">
                 </img>
-                <h1 class="main-weather__celcius"><span id="degree">25</span>&deg;c</h1>
-                <div class="main-weather__more-details">
-                    <span id="day">Today</span><br><span id="location">Feni</span><br> <span id="date">Monday,
-                        24/8/2021</span>
+                <h1 class="main-weather__celcius"><span id="degree">15</span>&deg;<span class="gray">c</span></h1>
+                <h4 class="weather-status">Shower</h4>
+                <div class="date">
+                    <h5>Today</h5>
+                    <span>&#8226;</span>
+                    <h5>Fri, 5 Jun</h5>
+                </div>
+                <div class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h5>Feni</h5>
                 </div>
             </div>
+
         </section>
         <section class="main-container">
             <div class="card-container">
@@ -44,40 +49,48 @@
                     <p>Tomorrow</p>
                     <img src="assets/Shower.png" alt="">
                     <div>
-                        <p>16&deg;</p>
-                        <p class="night">16&deg;</p>
+                        <p>16&deg;C</p>
+                        <p class="night">16&deg;C</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <p>Sat, 7 Jun</p>
+                    <img src="assets/Shower.png" alt="">
+                    <div>
+                        <p>16&deg;C</p>
+                        <p class="night">16&deg;C</p>
                     </div>
                 </div>
                 <div class="card">
                     <p>Sun, 7 Jun</p>
                     <img src="assets/Shower.png" alt="">
                     <div>
-                        <p>16&deg;</p>
-                        <p class="night">16&deg;</p>
+                        <p>16&deg;C</p>
+                        <p class="night">16&deg;C</p>
                     </div>
                 </div>
                 <div class="card">
-                    <p>mon, 8 Jun</p>
+                    <p>Mon, 8 Jun</p>
                     <img src="assets/Shower.png" alt="">
                     <div>
-                        <p>16&deg;</p>
-                        <p class="night">16&deg;</p>
+                        <p>16&deg;C</p>
+                        <p class="night">16&deg;C</p>
                     </div>
                 </div>
                 <div class="card">
-                    <p>tue, 9 Jun</p>
+                    <p>Tue, 9 Jun</p>
                     <img src="assets/Shower.png" alt="">
                     <div>
-                        <p>16&deg;</p>
-                        <p class="night">16&deg;</p>
+                        <p>16&deg;C</p>
+                        <p class="night">16&deg;C</p>
                     </div>
 
                 </div>
                 <div class="card">
-                    <p>wed, 9 Jun</p>
+                    <p>Wed, 9 Jun</p>
                     <img src="assets/Shower.png" alt="">
                     <div>
-                        <p>16&deg;</p>
+                        <p>16&deg;c</p>
                         <p class="night">16&deg;</p>
                     </div>
                 </div>
@@ -90,8 +103,13 @@
                     <div class="highlight">
                         <p>Wind Status</p>
                         <h2>7<span>mph</span></h2>
-                        <span><i class="fas fa-location-arrow"></i>
-                            <p>WSW</p>
+                        <span>
+                            <div class="flex">
+                                <span>
+                                    <i class="fas fa-location-arrow"></i>
+                                </span>
+                                <p class="WSW">WSW</p>
+                            </div>
                     </div>
                     <div class="highlight">
                         <p>Humidity</p>
@@ -102,14 +120,14 @@
                             </div>
                             <div class="progress-bar">
                                 <div class="range"></div>
-                                <div class="percent"></div>
                             </div>
+                            <div class="percent">%</div>
                         </div>
                     </div>
                     <div class="highlight">
                         <p>Visibility</p>
-                        <h2>64
-                            <span>miles</span>
+                        <h2>6,4
+                            <span class="bold">miles</span>
                         </h2>
                     </div>
                     <div class="highlight">
