@@ -40,6 +40,7 @@ if (navigator.geolocation) {
             `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=23.0186&lon=91.41&appid=${API_KEY}`
 
             // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=${API_KEY}` // https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
+
             //     `${corsApi}https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`
             //   );
           );
@@ -51,8 +52,8 @@ if (navigator.geolocation) {
           temp.textContent = Math.ceil(data.main.temp - 273);
           weatherStatus.textContent = data.weather[0].description;
           humidity.textContent = data.main.humidity + "%";
-          wind.textContent = Math.ceil(data.wind.speed) + " mph";
-          visibility.textContent = data.visibility / 1000 + " miles";
+          wind.textContent = Math.ceil(data.wind.speed) + " km/h";
+          visibility.textContent = data.visibility / 1000 + " km";
           airP.textContent = data.main.pressure + " mb";
           progressHumidity.style.width = `${data.main.humidity}%`;
 

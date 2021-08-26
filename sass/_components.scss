@@ -36,8 +36,12 @@
   @media (max-width: 60.3125rem) {
     justify-content: center;
   }
+
+  @media (max-width: 25.5rem) {
+    width: 200px;
+  }
   & img {
-    width: 4rem;
+    width: 7.5rem;
     margin: 0.625rem 0 1.875rem 0;
   }
 

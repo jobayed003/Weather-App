@@ -49,8 +49,13 @@
     justify-content: center;
   }
 }
+@media (max-width: 25.5rem) {
+  .card {
+    width: 200px;
+  }
+}
 .card img {
-  width: 4rem;
+  width: 7.5rem;
   margin: 0.625rem 0 1.875rem 0;
 }
 .card div {
@@ -86,6 +91,9 @@
 .main-weather__details {
   padding-top: 5rem;
   text-align: center;
+}
+.main-weather__details img {
+  width: 10rem;
 }
 @media (max-width: 60.3125rem) {
   .main-weather__details {
