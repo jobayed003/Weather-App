@@ -180,12 +180,12 @@
 .humidity-status {
   margin-top: 2rem;
   color: #a09fb1;
+  font-weight: 700;
 }
 .humidity-status .mark {
   display: flex;
   justify-content: space-between;
   color: #a09fb1;
-  font-weight: 700;
 }
 .humidity-status > .percent {
   text-align: right;
