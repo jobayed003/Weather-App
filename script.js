@@ -13,17 +13,8 @@ const wind = document.querySelector(".wind-status");
 const visibility = document.querySelector(".visibility");
 const airP = document.querySelector(".air-pressure");
 const progressHumidity = document.querySelector(".range");
+const icon = document.querySelector(".weather-icon");
 
-// const days = [
-//   "Sunday",
-//   "Monday",
-//   "Tuesday",
-//   "Wednesday",
-//   "Thursday",
-//   "Friday",
-//   "Saturday",
-// ];
-// day.filter((a, e) => (e.innerText = `${days[new Date().getDay()]}`));
 const API_KEY = "6a983787c2b5ef2486f17fa63699454c";
 
 if (navigator.geolocation) {
@@ -56,24 +47,16 @@ if (navigator.geolocation) {
           visibility.textContent = data.visibility / 1000 + " km";
           airP.textContent = data.main.pressure + " mb";
           progressHumidity.style.width = `${data.main.humidity}%`;
+          icon.src = `assets/${data.weather[0].icon}.png`;
 
           const now = new Date();
-          const days = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ];
           const options = {
             day: "numeric",
             month: "numeric",
             year: "numeric",
             weekday: "long",
           };
-          const locale = navigator.language; // To get the user ISO language!
+          const locale = navigator.language;
 
           date.textContent = new Intl.DateTimeFormat(locale, options).format(
             now
