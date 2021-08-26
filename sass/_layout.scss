@@ -22,6 +22,7 @@
       color: #a09fb1;
       font-weight: 600;
       font-size: 2.25rem;
+      text-transform: capitalize;
     }
   }
   &__search-area {
@@ -188,7 +189,6 @@
     background: #e7e7eb;
     border-radius: 80px;
     & > .range {
-      width: 84%;
       height: 100%;
       border-radius: 80px;
       background: #ffec65;

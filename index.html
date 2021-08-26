@@ -18,7 +18,7 @@
     <main id="main">
         <section class="main-weather">
             <div class="main-weather__search-area">
-                <input placeholder="Search For Location"></input>
+                <input class="input-area" placeholder="Search For Location"></input>
                 <div class="icon">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
@@ -28,16 +28,17 @@
             <div class="main-weather__details">
                 <img class="weather-icon" src="assets/Shower.png">
                 </img>
-                <h1 class="main-weather__celcius"><span id="degree">15</span>&deg;<span class="gray">c</span></h1>
+                <h1 class="main-weather__celcius"><span id="degree"></span>&deg;<span id="format" class="gray">c</span>
+                </h1>
                 <h4 class="weather-status">Shower</h4>
                 <div class="date">
-                    <h5>Today</h5>
+                    <h5 class="day">Today</h5>
                     <span>&#8226;</span>
-                    <h5>Fri, 5 Jun</h5>
+                    <h5 class="dates">Fri, 5 Jun</h5>
                 </div>
                 <div class="location">
                     <i class="fas fa-map-marker-alt"></i>
-                    <h5>Feni</h5>
+                    <h5 class="city">Feni</h5>
                 </div>
             </div>
 
@@ -46,51 +47,51 @@
             <div class="card-container">
 
                 <div class="card">
-                    <p>Tomorrow</p>
+                    <p class="days">Tomorrow</p>
                     <img src="assets/Sleet.png" alt="">
                     <div>
-                        <p>16&deg;C</p>
+                        <p class="daylight">16&deg;C</p>
                         <p class="night">16&deg;C</p>
                     </div>
                 </div>
                 <div class="card">
-                    <p>Sat, 7 Jun</p>
+                    <p class="days">Sat, 7 Jun</p>
                     <img src="assets/Snow.png" alt="">
                     <div>
-                        <p>16&deg;C</p>
+                        <p class="daylight">16&deg;C</p>
                         <p class="night">16&deg;C</p>
                     </div>
                 </div>
                 <div class="card">
-                    <p>Sun, 7 Jun</p>
+                    <p class="days">Sun, 7 Jun</p>
                     <img src="assets/Light Cloud.png" alt="">
                     <div>
-                        <p>16&deg;C</p>
+                        <p class="daylight">16&deg;C</p>
                         <p class="night">16&deg;C</p>
                     </div>
                 </div>
                 <div class="card">
-                    <p>Mon, 8 Jun</p>
+                    <p class="days">Mon, 8 Jun</p>
                     <img src="assets/Light Rain.png" alt="">
                     <div>
-                        <p>16&deg;C</p>
+                        <p class="daylight">16&deg;C</p>
                         <p class="night">16&deg;C</p>
                     </div>
                 </div>
                 <div class="card">
-                    <p>Tue, 9 Jun</p>
+                    <p class="days">Tue, 9 Jun</p>
                     <img src="assets/Thunderstorm.png" alt="">
                     <div>
-                        <p>16&deg;C</p>
+                        <p class="daylight">16&deg;C</p>
                         <p class="night">16&deg;C</p>
                     </div>
 
                 </div>
                 <div class="card">
-                    <p>Wed, 9 Jun</p>
+                    <p class="days">Wed, 9 Jun</p>
                     <img src="assets/Clear.png" alt="">
                     <div>
-                        <p>16&deg;c</p>
+                        <p class="daylight">16&deg;c</p>
                         <p class="night">16&deg;</p>
                     </div>
                 </div>
@@ -102,7 +103,7 @@
                 <div class="highlights-container">
                     <div class="highlight">
                         <p>Wind Status</p>
-                        <h2>7<span>mph</span></h2>
+                        <h2 class="wind-status"><span></span></h2>
                         <span>
                             <div class="flex">
                                 <span>
@@ -113,7 +114,7 @@
                     </div>
                     <div class="highlight">
                         <p>Humidity</p>
-                        <h2>84<span>%</span></h2>
+                        <h2 class="humidity"></h2>
                         <div class="humidity-status">
                             <div class="mark">
                                 <span>0</span><span>50</span><span>100</span>
@@ -126,13 +127,13 @@
                     </div>
                     <div class="highlight">
                         <p>Visibility</p>
-                        <h2>6,4
-                            <span class="bold">miles</span>
+                        <h2 class="visibility">
+                            <span class="bold"></span>
                         </h2>
                     </div>
                     <div class="highlight">
                         <p>Air Pressure</p>
-                        <h2>998 <span>mb</span></h2>
+                        <h2 class="air-pressure"></h2>
                     </div>
                 </div>
 
