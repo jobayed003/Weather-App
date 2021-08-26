@@ -2,6 +2,9 @@
   display: flex;
   color: white;
   background: #100e1d;
+  @media (max-width: 60.3125rem) {
+    flex-direction: column;
+  }
 }
 
 .card-container {
@@ -9,6 +12,16 @@
   display: flex;
   flex-wrap: wrap;
   gap: 26px;
+
+  @media (max-width: 60.3125rem) {
+    padding: 3.25rem 6.4rem;
+    justify-content: center;
+  }
+
+  @media (max-width: 34.375rem) {
+    justify-content: center;
+    padding-inline: 2rem;
+  }
 }
 
 .card {
@@ -19,6 +32,10 @@
   align-items: center;
   flex-direction: column;
   background-color: #1e213a;
+
+  @media (max-width: 60.3125rem) {
+    justify-content: center;
+  }
   & img {
     width: 4rem;
     margin: 0.625rem 0 1.875rem 0;

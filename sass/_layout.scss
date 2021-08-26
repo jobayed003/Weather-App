@@ -6,9 +6,17 @@
   min-height: 100vh;
   padding-top: 2rem;
 
+  @media (max-width: 60.3125rem) {
+    width: 100%;
+  }
+
   &__details {
     padding-top: 5rem;
     text-align: center;
+
+    @media (max-width: 60.3125rem) {
+      padding-bottom: 2rem;
+    }
 
     & .weather-status {
       color: #a09fb1;
@@ -20,6 +28,11 @@
     display: flex;
     justify-content: center;
     padding: 0.5rem;
+
+    @media (max-width: 60.3125rem) {
+      justify-content: space-between;
+      padding-inline: 2rem;
+    }
 
     & input {
       background: #6e707a;
@@ -91,6 +104,11 @@
   color: #e7e7eb;
   text-decoration: none solid rgb(231, 231, 235);
 
+  @media (max-width: 40.625rem) {
+    display: flex;
+    flex-direction: column;
+  }
+
   & .highlight {
     background-color: #1e213a;
     text-align: center;
@@ -126,13 +144,25 @@
     }
     h2 {
       font-size: 4rem;
+
+      @media (max-width: 25rem) {
+        font-size: 2rem;
+      }
       span {
         font-weight: 500;
         font-size: 2.25rem;
+
+        @media (max-width: 25rem) {
+          font-size: 2rem;
+        }
       }
       & .bold {
         font-weight: 700;
         font-size: 4rem;
+
+        @media (max-width: 25rem) {
+          font-size: 2rem;
+        }
       }
     }
   }
