@@ -36,7 +36,8 @@ if (navigator.geolocation) {
         try {
           const corsApi = "https://cors-anywhere.herokuapp.com/";
           const res = await fetch(
-            `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
+            // `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
+            `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=23.0186&lon=91.41&appid=${API_KEY}`
 
             // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=${API_KEY}` // https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
             //     `${corsApi}https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`
