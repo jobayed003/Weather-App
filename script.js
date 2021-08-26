@@ -76,7 +76,7 @@ if (navigator.geolocation) {
           date.textContent = new Intl.DateTimeFormat(locale, options).format(
             now
           );
-          day1.textContent = `${days[new Date().getDay()]}`;
+          //   day1.textContent = `${days[new Date().getDay()]}`;
         } catch (err) {
           console.log(err.message);
         }
