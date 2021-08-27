@@ -19,6 +19,14 @@ const loader = document.querySelector(".spinner-container");
 
 const API_KEY = "6a983787c2b5ef2486f17fa63699454c";
 
+const timeout = function (s) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error(`Request took too long! Timeout after ${s} second`));
+    }, s * 1000);
+  });
+};
+
 const loadingSpinner = () => {
   loader.style.display = "flex";
   main.style.display = "none";
@@ -36,10 +44,10 @@ if (navigator.geolocation) {
     (pos) => {
       console.log(pos);
       const { latitude: lat, longitude: long } = pos.coords;
+
       loadingSpinner();
       const weather = async () => {
         try {
-          removeSpinner();
           const corsApi = "https://cors-anywhere.herokuapp.com/";
           const res = await fetch(
             // `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
@@ -50,6 +58,7 @@ if (navigator.geolocation) {
             //     `${corsApi}https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`
             //   );
           );
+          if (res) removeSpinner();
           const data = await res.json();
 
           console.log(data);
@@ -77,7 +86,7 @@ if (navigator.geolocation) {
           );
           day1.textContent = "Today";
         } catch (err) {
-          removeSpinner();
+          loadingSpinner();
         }
       };
       weather();
