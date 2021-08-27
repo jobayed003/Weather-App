@@ -30,14 +30,13 @@ const removeSpinner = () => {
     loader.style.display = "none";
   }
 };
-loadingSpinner();
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
       console.log(pos);
       const { latitude: lat, longitude: long } = pos.coords;
-
+      loadingSpinner();
       const weather = async () => {
         try {
           removeSpinner();
