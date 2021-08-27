@@ -129,7 +129,7 @@ if (navigator.geolocation) {
 
             const secondWeather = async () => {
               const res = await fetch(
-                `http://api.openweathermap.org/geo/1.0/direct?q=${query.value}&limit=5&appid=${API_KEY}`
+                `https://api.openweathermap.org/geo/1.0/direct?q=${query.value}&limit=5&appid=${API_KEY}`
               );
               const data = await res.json();
               const res2 = await fetch(
