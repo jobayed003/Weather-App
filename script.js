@@ -5,7 +5,6 @@ const format = document.getElementById("format");
 const weatherStatus = document.querySelector(".weather-status");
 const date = document.querySelector(".dates");
 const city = document.querySelector(".city");
-const day = document.querySelectorAll(".days");
 const day1 = document.querySelector(".day");
 const nighttime = document.querySelectorAll(".night");
 const daytime = document.querySelectorAll(".daylight");
@@ -16,8 +15,9 @@ const airP = document.querySelector(".air-pressure");
 const progressHumidity = document.querySelector(".range");
 const icon = document.querySelector(".weather-icon");
 const loader = document.querySelector(".spinner-container");
-
+const day = document.querySelectorAll(".days");
 const API_KEY = "6a983787c2b5ef2486f17fa63699454c";
+const secondIcon = document.querySelectorAll(".icons");
 
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -42,7 +42,7 @@ const removeSpinner = () => {
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      console.log(pos);
+      // console.log(pos);
       const { latitude: lat, longitude: long } = pos.coords;
 
       loadingSpinner();
@@ -50,25 +50,17 @@ if (navigator.geolocation) {
         try {
           const corsApi = "https://cors-anywhere.herokuapp.com/";
           const res = await fetch(
-            // `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
             `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
-
-            // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=${API_KEY}` // https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
-
-            //     `${corsApi}https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${API_KEY}`
-            //   );
           );
           if (res) removeSpinner();
           const data = await res.json();
-
-          console.log(data);
 
           city.textContent = data.name;
           temp.textContent = Math.ceil(data.main.temp - 273);
           weatherStatus.textContent = data.weather[0].description;
           humidity.textContent = data.main.humidity + "%";
           wind.textContent = Math.ceil(data.wind.speed) + " km/h";
-          visibility.textContent = data.visibility / 1000 + " km";
+          visibility.textContent = Math.ceil(data.visibility / 1000) + " km";
           airP.textContent = data.main.pressure + " mb";
           progressHumidity.style.width = `${data.main.humidity}%`;
           icon.src = `assets/${data.weather[0].icon}.png`;
@@ -76,15 +68,41 @@ if (navigator.geolocation) {
           const now = new Date();
           const options = {
             day: "numeric",
-            month: "numeric",
-            year: "numeric",
-            weekday: "long",
+            month: "short",
+            weekday: "short",
           };
 
           date.textContent = new Intl.DateTimeFormat("en-UK", options).format(
             now
           );
           day1.textContent = "Today";
+
+          const secondWeather = async () => {
+            const res = await fetch(
+              `https://api.openweathermap.org/data/2.5/onecall?lat=23.1793157&lon=91.9881527&exclude=minutely&appid=${API_KEY}`
+            );
+            const data = await res.json();
+            const options = {
+              day: "numeric",
+              month: "short",
+              weekday: "short",
+            };
+
+            data.daily.splice(1, 8).forEach((el, i) => {
+              const formatedDate = new Date(el.dt * 1000);
+
+              day[i].textContent = `${new Intl.DateTimeFormat(
+                "en",
+                options
+              ).format(formatedDate)}`;
+
+              daytime[i].textContent = Math.ceil(+el.temp.day - 273) + "°C";
+              nighttime[i].textContent = Math.ceil(+el.temp.night - 273) + "°C";
+              secondIcon[i].src = `assets/${el.weather[0].icon}.png`;
+            });
+            // console.log(data);
+          };
+          secondWeather();
         } catch (err) {
           loadingSpinner();
         }
@@ -98,10 +116,3 @@ if (navigator.geolocation) {
       )
   );
 }
-
-//   const res = await fetch(
-//     `${corsApi}https://api.openweathermap.org/data/2.5/forecast?q=${[
-//       lat,
-//       long,
-//     ]}&appid=${apiKey}`
-//   );
