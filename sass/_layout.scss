@@ -14,8 +14,15 @@
     padding-top: 5rem;
     text-align: center;
 
-    & img {
-      width: 10rem;
+    & .weather-main-icon {
+      width: 100%;
+      padding-inline: 4rem;
+      object-fit: fill;
+
+      & img {
+        width: 10rem;
+        object-fit: cover;
+      }
     }
 
     @media (max-width: 60.3125rem) {

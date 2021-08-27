@@ -2,8 +2,31 @@
   display: flex;
   color: white;
   background: #100e1d;
+
   @media (max-width: 60.3125rem) {
     flex-direction: column;
+  }
+}
+
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+
+  svg {
+    height: 6rem;
+    width: 6rem;
+    fill: gray;
+    animation: rotate 2s infinite linear;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 

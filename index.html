@@ -16,6 +16,11 @@
 
 <body>
     <main id="main">
+        <!-- <div class="spinner">
+            <svg>
+                <use href="assets/icons.svg#icon-loader"></use>
+            </svg>
+        </div> -->
         <section class="main-weather">
             <div class="main-weather__search-area">
                 <input class="input-area" placeholder="Search For Location"></input>
@@ -24,7 +29,11 @@
                 </div>
             </div>
             <div class="main-weather__details">
-                <img class="weather-icon">
+                <div class="weather-main-icon">
+                    <img class="weather-icon">
+
+                </div>
+
                 <h1 class="main-weather__celcius"><span id="degree"></span>&deg;<span id="format" class="gray">c</span>
                 </h1>
                 <h4 class="weather-status"></h4>

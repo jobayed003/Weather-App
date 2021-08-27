@@ -5,6 +5,10 @@
   font-family: "Raleway", sans-serif;
 }
 
+body {
+  background: #100e1d;
+}
+
 #main {
   display: flex;
   color: white;
@@ -16,6 +20,25 @@
   }
 }
 
+.spinner {
+  margin: 5rem auto;
+  text-align: center;
+}
+.spinner svg {
+  height: 6rem;
+  width: 6rem;
+  fill: gray;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .card-container {
   padding: 3.25rem 5.5rem;
   display: flex;
@@ -92,8 +115,14 @@
   padding-top: 5rem;
   text-align: center;
 }
-.main-weather__details img {
+.main-weather__details .weather-main-icon {
+  width: 100%;
+  padding-inline: 4rem;
+  object-fit: fill;
+}
+.main-weather__details .weather-main-icon img {
   width: 10rem;
+  object-fit: cover;
 }
 @media (max-width: 60.3125rem) {
   .main-weather__details {

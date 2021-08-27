@@ -1,3 +1,4 @@
+const main = document.getElementById("main");
 const input = document.querySelector(".input-area");
 const temp = document.getElementById("degree");
 const format = document.getElementById("format");
@@ -20,6 +21,15 @@ const API_KEY = "6a983787c2b5ef2486f17fa63699454c";
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
+      const markup = `
+      <div class="spinner">
+          <svg>
+              <use href="assets/icons.svg#icon-loader"></use>
+          </svg>
+      </div>
+  `;
+      main.innerHTML = "";
+      main.insertAdjacentHTML("afterbegin", markup);
       console.log(pos);
       const { latitude: lat, longitude: long } = pos.coords;
       console.log(lat, long);
@@ -28,7 +38,7 @@ if (navigator.geolocation) {
           const corsApi = "https://cors-anywhere.herokuapp.com/";
           const res = await fetch(
             // `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
-            `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=23.0186&lon=91.41&appid=${API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=23.0186&lon=91.41&appid=${API_KEY}`
 
             // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=${API_KEY}` // https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
 
@@ -56,9 +66,8 @@ if (navigator.geolocation) {
             year: "numeric",
             weekday: "long",
           };
-          const locale = navigator.language;
 
-          date.textContent = new Intl.DateTimeFormat(locale, options).format(
+          date.textContent = new Intl.DateTimeFormat("en-UK", options).format(
             now
           );
           day1.textContent = "Today";
