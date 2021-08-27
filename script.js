@@ -15,30 +15,36 @@ const visibility = document.querySelector(".visibility");
 const airP = document.querySelector(".air-pressure");
 const progressHumidity = document.querySelector(".range");
 const icon = document.querySelector(".weather-icon");
+const loader = document.querySelector(".spinner-container");
 
 const API_KEY = "6a983787c2b5ef2486f17fa63699454c";
+
+const loadingSpinner = () => {
+  loader.style.display = "flex";
+  main.style.display = "none";
+};
+
+const removeSpinner = () => {
+  if (!loader.hidden) {
+    main.style.display = "flex";
+    loader.style.display = "none";
+  }
+};
+loadingSpinner();
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
-      const markup = `
-      <div class="spinner">
-          <svg>
-              <use href="assets/icons.svg#icon-loader"></use>
-          </svg>
-      </div>
-  `;
-      main.innerHTML = "";
-      main.insertAdjacentHTML("afterbegin", markup);
       console.log(pos);
       const { latitude: lat, longitude: long } = pos.coords;
-      console.log(lat, long);
+
       const weather = async () => {
         try {
+          removeSpinner();
           const corsApi = "https://cors-anywhere.herokuapp.com/";
           const res = await fetch(
             // `${corsApi}https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
-            `https://api.openweathermap.org/data/2.5/weather?lat=23.0186&lon=91.41&appid=${API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
 
             // https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=hourly,daily&appid=${API_KEY}` // https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${API_KEY}`
 
@@ -72,12 +78,16 @@ if (navigator.geolocation) {
           );
           day1.textContent = "Today";
         } catch (err) {
-          console.log(err.message);
+          removeSpinner();
         }
       };
       weather();
     },
-    () => alert("Could not get your location, Please search for any cities :)")
+    () =>
+      alert(
+        "Could not get your location, Please search for any cities :)",
+        loadingSpinner()
+      )
   );
 }
 
