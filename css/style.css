@@ -106,6 +106,40 @@ body {
   display: none;
 }
 
+.active {
+  display: flex;
+}
+
+.error-message {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #a09fb1;
+}
+.error-message .search__field {
+  padding: 0.5rem;
+}
+.error-message .search__field input {
+  background: #6e707a;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 20px;
+  padding: 0.5rem;
+  outline: none;
+}
+.error-message .search__field input::placeholder {
+  transform: translateY(20deg);
+  color: white;
+}
+@media (max-width: 60.3125rem) {
+  .error-message .search__field input {
+    justify-content: space-between;
+    padding-inline: 2rem;
+  }
+}
+
 .main-weather {
   width: 370px;
   background-color: #1e213a;

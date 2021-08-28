@@ -89,7 +89,40 @@
     padding-bottom: 1rem;
   }
 }
-
 .hidden {
   display: none;
+}
+
+.active {
+  display: flex;
+}
+
+.error-message {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #a09fb1;
+
+  & .search__field {
+    padding: 0.5rem;
+
+    & input {
+      background: #6e707a;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 20px;
+      padding: 0.5rem;
+      outline: none;
+      &::placeholder {
+        transform: translateY(20deg);
+        color: white;
+      }
+      @media (max-width: 60.3125rem) {
+        justify-content: space-between;
+        padding-inline: 2rem;
+      }
+    }
+  }
 }

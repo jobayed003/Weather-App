@@ -10,11 +10,20 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="images/weather.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="script.js"></script>
+    <!-- <script defer type="module" src="js/api.js"></script> -->
+    <script type="module" defer src="js/script.js"></script>
     <title>Weather App</title>
 </head>
 
 <body>
+
+    <div class="error-message hidden">
+        <h2>Sorry 🙁 No data found for this city !</h2>
+        <form class="search__field">
+            <input type="text" class="input" placeholder="Search For Location" />
+        </form>
+    </div>
+
     <div class="spinner-container">
         <div class="spinner">
         </div>
@@ -23,12 +32,12 @@
     <main id="main">
         <section class="main-weather">
             <div class="main-weather__search-area">
-                <form onsubmit="" class="search">
+                <form class="search">
                     <input type="text" class="input-area" placeholder="Search For Location" />
                 </form>
-                <div class="icon">
+                <!-- <div class="icon">
                     <i class="fas fa-map-marker-alt"></i>
-                </div>
+                </div> -->
             </div>
             <div class="main-weather__details">
                 <div class="weather-main-icon">
