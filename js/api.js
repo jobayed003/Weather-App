@@ -2,7 +2,6 @@ import {
   renderError,
   changingTextcontent,
   changingDetails,
-  loadingSpinner,
   removeSpinner,
 } from './helper.js';
 import * as name from './config.js';
@@ -12,13 +11,12 @@ export const searchResult = async query => {
     const res = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${name.API_KEY}`
     );
+
     const data = await res.json();
-    if (!data) return;
-    if (!changingTextcontent(data)) removeSpinner();
+    if (changingTextcontent(data)) removeSpinner();
     changingTextcontent(data);
   } catch (err) {
-    console.log(err.message);
-    renderError();
+    renderError('Sorry 🙁 No data found for this city !');
   }
 };
 
@@ -36,7 +34,6 @@ export const searchWeather = async query => {
     changingDetails(data2);
     removeSpinner();
   } catch (err) {
-    renderError();
-    console.log(err.message);
+    renderError(`Sorry 🙁 No data found for this "${query}" city !`);
   }
 };

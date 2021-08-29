@@ -12,11 +12,13 @@ export const removeSpinner = () => {
   }
 };
 
-export const renderError = () => {
+export const renderError = message => {
   name.loader.style.display = 'none';
   name.main.style.display = 'none';
   name.errorMessage.classList.remove('hidden');
   name.errorMessage.classList.add('active');
+  name.error.textContent = '';
+  name.error.textContent = message;
 };
 
 export const removeError = () => {
@@ -30,10 +32,10 @@ export const changingTextcontent = data => {
   name.city.textContent = data.name;
   name.temp.textContent = Math.ceil(data.main.temp - 273);
   name.weatherStatus.textContent = data.weather[0].description;
-  name.humidity.textContent = data.main.humidity + '%';
-  name.wind.textContent = Math.ceil(data.wind.speed) + ' km/h';
-  name.visibility.textContent = Math.ceil(data.visibility / 1000) + ' km';
-  name.airP.textContent = data.main.pressure + ' mb';
+  name.humidity.textContent = `${data.main.humidity}%`;
+  name.wind.textContent = `${Math.ceil(data.wind.speed)} km/h`;
+  name.visibility.textContent = `${Math.ceil(data.visibility / 1000)} km`;
+  name.airP.textContent = `${data.main.pressure} hPa`;
   name.progressHumidity.style.width = `${data.main.humidity}%`;
   name.icon.src = `assets/${data.weather[0].icon}.png`;
 
@@ -54,15 +56,15 @@ export const changingDetails = data => {
     month: 'short',
     weekday: 'short',
   };
-  data.daily.splice(1, 8).forEach((el, i) => {
+  data.daily.splice(1, 7).forEach((el, i) => {
     const formatedDate = new Date(el.dt * 1000);
-
     name.day[i].textContent = `${new Intl.DateTimeFormat('en', options).format(
       formatedDate
     )}`;
 
-    name.daytime[i].textContent = Math.ceil(+el.temp.day - 273) + '°C';
-    name.nighttime[i].textContent = Math.ceil(+el.temp.night - 273) + '°C';
+    name.daytime[i].textContent = `${Math.ceil(+el.temp.day - 273)}°C`;
+    name.nighttime[i].textContent = `${Math.ceil(+el.temp.night - 273)}°C`;
     name.secondIcon[i].src = `assets/${el.weather[0].icon}.png`;
   });
+  name.day[0].textContent = 'Tommorrow';
 };

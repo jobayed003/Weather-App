@@ -99,6 +99,7 @@
 
 .error-message {
   height: 100vh;
+  text-align: center;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -115,9 +116,10 @@
       border-radius: 20px;
       padding: 0.5rem;
       outline: none;
+
       &::placeholder {
         transform: translateY(20deg);
-        color: white;
+        color: #333;
       }
       @media (max-width: 60.3125rem) {
         justify-content: space-between;

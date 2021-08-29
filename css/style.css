@@ -112,6 +112,7 @@ body {
 
 .error-message {
   height: 100vh;
+  text-align: center;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -131,7 +132,7 @@ body {
 }
 .error-message .search__field input::placeholder {
   transform: translateY(20deg);
-  color: white;
+  color: #333;
 }
 @media (max-width: 60.3125rem) {
   .error-message .search__field input {
@@ -182,12 +183,14 @@ body {
   justify-content: center;
   padding: 0.5rem;
 }
-.main-weather__search-area .search {
-  width: 100%;
-}
 @media (max-width: 60.3125rem) {
   .main-weather__search-area {
     padding-inline: 4rem;
+  }
+}
+@media (max-width: 60.3125rem) {
+  .main-weather__search-area .search {
+    width: 100%;
   }
 }
 .main-weather__search-area input {
@@ -205,9 +208,8 @@ body {
   }
 }
 .main-weather__search-area input::placeholder {
-  text-align: center;
   transform: translateY(20deg);
-  color: white;
+  color: #333;
 }
 .main-weather__search-area .icon {
   background-color: #6e707a;

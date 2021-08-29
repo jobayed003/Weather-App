@@ -26,8 +26,9 @@ export const loader = document.querySelector('.spinner-container');
 export const day = document.querySelectorAll('.days');
 
 export const secondIcon = document.querySelectorAll('.icons');
-
 export const errorMessage = document.querySelector('.error-message');
+export const error = document.getElementById('error-message');
+
 export const countries = [
   'Afghanistan',
   'Albania',
