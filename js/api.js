@@ -31,7 +31,6 @@ export const searchWeather = async query => {
       `https://api.openweathermap.org/data/2.5/onecall?lat=${data[0].lat}&lon=${data[0].lon}&exclude=minutely&appid=${name.API_KEY}`
     );
     const data2 = await res2.json();
-    console.log(data2);
     changingDetails(data2);
     removeSpinner();
   } catch (err) {

@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer';
 import * as name from './config.js';
 
 export const loadingSpinner = () => {
@@ -29,22 +28,24 @@ export const removeError = () => {
   name.errorMessage.classList.remove('active');
 };
 
-export const changingTextcontent = (data, data2) => {
+let detailsData = [];
+
+export const changingTextcontent = data => {
   name.city.textContent = data.name;
   const convertedTemp = Math.ceil(data.main.temp - 273);
   const formula = convertedTemp * 1.8 + 32;
 
   name.temp.textContent = convertedTemp;
-  keepingData();
+
   name.format.addEventListener('click', () => {
     if (name.format.textContent === 'F') {
       name.format.textContent = 'C';
       name.temp.textContent = convertedTemp;
-      // keepingData();
+      changingFormat(detailsData, 'C');
     } else {
       name.format.textContent = 'F';
       Math.ceil((name.temp.textContent = Math.ceil(formula)));
-      // keepingData();
+      changingFormat(detailsData, 'F');
     }
   });
 
@@ -69,8 +70,6 @@ export const changingTextcontent = (data, data2) => {
 
 export const changingDetails = data => {
   changingFormat(data, 'C');
-
-  name.day[0].textContent = 'Tommorrow';
 };
 
 const changingFormat = (data, format) => {
@@ -102,12 +101,7 @@ const changingFormat = (data, format) => {
 
     name.secondIcon[i].src = `assets/${el.weather[0].icon}.png`;
   });
+  name.day[0].textContent = 'Tommorrow';
+
+  detailsData = data;
 };
-
-// Event Listener
-
-// export const keepingData = data => {
-//   return data;
-// };
-
-// console.log(data);

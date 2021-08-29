@@ -1,4 +1,5 @@
 'use strict';
+
 import { searchWeather, searchResult } from './api.js';
 import * as name from './config.js';
 import {
@@ -8,16 +9,7 @@ import {
   removeSpinner,
   removeError,
   renderError,
-  keepingData,
 } from './helper.js';
-
-// const timeout = function (s) {
-//   return new Promise(function (_, reject) {
-//     setTimeout(function () {
-//       reject(new Error(`Request took too long! Timeout after ${s} second`));
-//     }, s * 1000);
-//   });
-// };
 
 if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
@@ -38,9 +30,7 @@ if (navigator.geolocation) {
               `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&appid=${name.API_KEY}`
             );
             const data = await res.json();
-
             changingDetails(data);
-            // keepingData(data);
             if (data) removeSpinner();
           };
           secondWeather();
@@ -56,7 +46,6 @@ if (navigator.geolocation) {
 }
 
 // Implementing the search results for searchig for location
-
 name.search.addEventListener('submit', e => {
   e.preventDefault();
   loadingSpinner();
