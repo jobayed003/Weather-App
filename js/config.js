@@ -13,8 +13,8 @@ export const date = document.querySelector('.dates');
 export const city = document.querySelector('.city');
 export const day1 = document.querySelector('.day');
 
-export const nighttime = document.querySelectorAll('.night');
-export const daytime = document.querySelectorAll('.daylight');
+export const nightTime = document.querySelectorAll('.night');
+export const dayTime = document.querySelectorAll('.daylight');
 export const humidity = document.querySelector('.humidity');
 export const wind = document.querySelector('.wind-status');
 export const visibility = document.querySelector('.visibility');

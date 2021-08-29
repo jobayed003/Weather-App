@@ -8,6 +8,7 @@ import {
   removeSpinner,
   removeError,
   renderError,
+  keepingData,
 } from './helper.js';
 
 // const timeout = function (s) {
@@ -37,7 +38,9 @@ if (navigator.geolocation) {
               `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&exclude=minutely&appid=${name.API_KEY}`
             );
             const data = await res.json();
+
             changingDetails(data);
+            // keepingData(data);
             if (data) removeSpinner();
           };
           secondWeather();

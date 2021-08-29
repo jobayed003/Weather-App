@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import * as name from './config.js';
 
 export const loadingSpinner = () => {
@@ -28,9 +29,25 @@ export const removeError = () => {
   name.errorMessage.classList.remove('active');
 };
 
-export const changingTextcontent = data => {
+export const changingTextcontent = (data, data2) => {
   name.city.textContent = data.name;
-  name.temp.textContent = Math.ceil(data.main.temp - 273);
+  const convertedTemp = Math.ceil(data.main.temp - 273);
+  const formula = convertedTemp * 1.8 + 32;
+
+  name.temp.textContent = convertedTemp;
+  keepingData();
+  name.format.addEventListener('click', () => {
+    if (name.format.textContent === 'F') {
+      name.format.textContent = 'C';
+      name.temp.textContent = convertedTemp;
+      // keepingData();
+    } else {
+      name.format.textContent = 'F';
+      Math.ceil((name.temp.textContent = Math.ceil(formula)));
+      // keepingData();
+    }
+  });
+
   name.weatherStatus.textContent = data.weather[0].description;
   name.humidity.textContent = `${data.main.humidity}%`;
   name.wind.textContent = `${Math.ceil(data.wind.speed)} km/h`;
@@ -51,20 +68,46 @@ export const changingTextcontent = data => {
 };
 
 export const changingDetails = data => {
-  const options = {
-    day: 'numeric',
-    month: 'short',
-    weekday: 'short',
-  };
-  data.daily.splice(1, 7).forEach((el, i) => {
+  changingFormat(data, 'C');
+
+  name.day[0].textContent = 'Tommorrow';
+};
+
+const changingFormat = (data, format) => {
+  const finalData = data.daily.slice(1, 8);
+  finalData.forEach((el, i) => {
+    const options = {
+      day: 'numeric',
+      month: 'short',
+      weekday: 'short',
+    };
+
     const formatedDate = new Date(el.dt * 1000);
     name.day[i].textContent = `${new Intl.DateTimeFormat('en', options).format(
       formatedDate
     )}`;
 
-    name.daytime[i].textContent = `${Math.ceil(+el.temp.day - 273)}°C`;
-    name.nighttime[i].textContent = `${Math.ceil(+el.temp.night - 273)}°C`;
+    const kelvinToFahrenDay = Math.ceil((el.temp.day - 273) * 1.8 + 32);
+    const kelvinToFahrenNight = Math.ceil((el.temp.night - 273) * 1.8 + 32);
+
+    const kelvinToCelciusDay = Math.ceil(el.temp.day - 273);
+    const kelvinToCelciusNight = Math.ceil(el.temp.night - 273);
+
+    name.dayTime[i].textContent = `${
+      format === 'C' ? kelvinToCelciusDay : kelvinToFahrenDay
+    }°${format}`;
+    name.nightTime[i].textContent = `${
+      format === 'C' ? kelvinToCelciusNight : kelvinToFahrenNight
+    }°${format}`;
+
     name.secondIcon[i].src = `assets/${el.weather[0].icon}.png`;
   });
-  name.day[0].textContent = 'Tommorrow';
 };
+
+// Event Listener
+
+// export const keepingData = data => {
+//   return data;
+// };
+
+// console.log(data);
