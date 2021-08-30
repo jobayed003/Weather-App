@@ -11,6 +11,8 @@
     <link rel="shortcut icon" href="assets/weather.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <script type="module" defer src="js/script.js"></script>
+
+
     <title>Weather App</title>
 </head>
 
@@ -19,6 +21,8 @@
         <h2 id="error-message"></h2>
         <form class="search__field">
             <input type="text" class="input" placeholder="Search For Location" />
+            <div class="auto-search__field">
+            </div>
         </form>
     </div>
     <div class="spinner-container">
@@ -30,7 +34,11 @@
             <div class="main-weather__search-area">
                 <form class="search">
                     <input type="text" class="input-area" placeholder="Search For Location" />
+                    <div class="auto-search__field">
+
+                    </div>
                 </form>
+
             </div>
             <div class="main-weather__details">
                 <div class="weather-main-icon">
@@ -155,6 +163,8 @@
             </div>
         </section>
     </main>
+    <script type="module" src="js/countrySuggestion.js"></script>
 </body>
+
 
 </html>

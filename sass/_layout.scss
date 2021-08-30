@@ -3,8 +3,10 @@
   background-color: #1e213a;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   padding-top: 2rem;
+  position: relative;
 
   @media (max-width: 60.3125rem) {
     width: 100%;
@@ -38,35 +40,62 @@
   }
   &__search-area {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     padding: 0.5rem;
 
     @media (max-width: 60.3125rem) {
       padding-inline: 4rem;
     }
 
-    @media (max-width: 60.3125rem) {
-      .search {
-        width: 100%;
+    .search {
+      width: 100%;
+
+      .auto-search__field {
+        @media (min-width: 60.3125rem) {
+          position: absolute;
+          width: 94.5%;
+        }
+        padding: 0;
+        overflow-y: auto;
+
+        & li {
+          background-color: #6e707a;
+          list-style: none;
+          text-align: left;
+          color: white;
+          // display: none;
+          padding: 8px 6px;
+          cursor: default;
+          border-radius: 3px;
+
+          &:hover {
+            background-color: white;
+            color: #6e707a;
+          }
+        }
       }
     }
+
     & input {
       background: #6e707a;
       border: none;
       color: white;
       font-size: 1rem;
-      border-radius: 20px;
+      border-radius: 5px;
       padding: 0.5rem;
       outline: none;
+      width: 100%;
 
       @media (max-width: 60.3125rem) {
         width: 100%;
       }
       &::placeholder {
-        transform: translateY(20deg);
         color: #333;
       }
     }
+
     & .icon {
       background-color: #6e707a;
       padding: 1rem;
@@ -85,9 +114,11 @@
     font-size: 6rem;
     font-weight: 500;
     margin-block: 2rem;
+
     &::selection {
       color: #fff;
     }
+
     & span::selection {
       color: #fff;
     }

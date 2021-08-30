@@ -1,10 +1,15 @@
 export const API_KEY = '6a983787c2b5ef2486f17fa63699454c';
 
 export const main = document.getElementById('main');
+
 export const search = document.querySelector('.search');
-export const query = search.querySelector('.input-area');
 export const searchField = document.querySelector('.search__field');
+export const suggBox = search.querySelector('.auto-search__field');
+export const suggBox2 = searchField.querySelector('.auto-search__field');
+
+export const query = search.querySelector('.input-area');
 export const secondQuery = document.querySelector('.input');
+
 export const temp = document.getElementById('degree');
 
 export const format = document.getElementById('format');

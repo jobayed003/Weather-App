@@ -117,27 +117,49 @@ body {
   align-items: center;
   flex-direction: column;
   color: #a09fb1;
+  position: relative;
 }
 .error-message .search__field {
   padding: 0.5rem;
+  width: 22rem;
+}
+@media (max-width: 20.625rem) {
+  .error-message .search__field {
+    width: 15rem;
+  }
+}
+.error-message .search__field .auto-search__field {
+  padding: 0;
+}
+.error-message .search__field .auto-search__field li {
+  background-color: #6e707a;
+  list-style: none;
+  text-align: left;
+  color: white;
+  padding: 8px 6px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+.error-message .search__field .auto-search__field li:hover {
+  color: #6e707a;
+  background-color: white;
 }
 .error-message .search__field input {
   background: #6e707a;
   border: none;
   color: white;
   font-size: 1rem;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 0.5rem;
   outline: none;
+  width: 100%;
 }
 .error-message .search__field input::placeholder {
-  transform: translateY(20deg);
   color: #333;
 }
 @media (max-width: 60.3125rem) {
   .error-message .search__field input {
     justify-content: space-between;
-    padding-inline: 2rem;
   }
 }
 
@@ -146,8 +168,10 @@ body {
   background-color: #1e213a;
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
   padding-top: 2rem;
+  position: relative;
 }
 @media (max-width: 60.3125rem) {
   .main-weather {
@@ -180,7 +204,9 @@ body {
 }
 .main-weather__search-area {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   padding: 0.5rem;
 }
 @media (max-width: 60.3125rem) {
@@ -188,19 +214,41 @@ body {
     padding-inline: 4rem;
   }
 }
-@media (max-width: 60.3125rem) {
-  .main-weather__search-area .search {
-    width: 100%;
+.main-weather__search-area .search {
+  width: 100%;
+}
+.main-weather__search-area .search .auto-search__field {
+  padding: 0;
+  overflow-y: auto;
+}
+@media (min-width: 60.3125rem) {
+  .main-weather__search-area .search .auto-search__field {
+    position: absolute;
+    width: 94.5%;
   }
+}
+.main-weather__search-area .search .auto-search__field li {
+  background-color: #6e707a;
+  list-style: none;
+  text-align: left;
+  color: white;
+  padding: 8px 6px;
+  cursor: default;
+  border-radius: 3px;
+}
+.main-weather__search-area .search .auto-search__field li:hover {
+  background-color: white;
+  color: #6e707a;
 }
 .main-weather__search-area input {
   background: #6e707a;
   border: none;
   color: white;
   font-size: 1rem;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 0.5rem;
   outline: none;
+  width: 100%;
 }
 @media (max-width: 60.3125rem) {
   .main-weather__search-area input {
@@ -208,7 +256,6 @@ body {
   }
 }
 .main-weather__search-area input::placeholder {
-  transform: translateY(20deg);
   color: #333;
 }
 .main-weather__search-area .icon {
