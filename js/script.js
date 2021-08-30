@@ -46,7 +46,6 @@ if (navigator.geolocation) {
 }
 
 // Implementing the search results for searchig for location
-
 name.search.addEventListener('submit', e => {
   e.preventDefault();
   loadingSpinner();

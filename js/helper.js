@@ -93,8 +93,7 @@ const changingFormat = (data, format) => {
   detailsData = data;
 };
 
-// Adding handler
-// Changing The Format when click happen!
+// Changing The Format When Click Event Happened!
 const changeToCelcius = convertedTemp => {
   name.format.textContent = 'C';
   name.temp.textContent = convertedTemp;
