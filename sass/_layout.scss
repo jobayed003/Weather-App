@@ -85,11 +85,21 @@
     font-size: 6rem;
     font-weight: 500;
     margin-block: 2rem;
+    &::selection {
+      color: #fff;
+    }
+    & span::selection {
+      color: #fff;
+    }
 
     & .gray {
       font-size: 4rem;
       color: #88869d;
       cursor: pointer;
+
+      &::selection {
+        color: #88869d;
+      }
     }
   }
   & .date {

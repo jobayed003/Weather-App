@@ -228,10 +228,19 @@ body {
   font-weight: 500;
   margin-block: 2rem;
 }
+.main-weather__celcius::selection {
+  color: #fff;
+}
+.main-weather__celcius span::selection {
+  color: #fff;
+}
 .main-weather__celcius .gray {
   font-size: 4rem;
   color: #88869d;
   cursor: pointer;
+}
+.main-weather__celcius .gray::selection {
+  color: #88869d;
 }
 .main-weather .date {
   display: flex;
