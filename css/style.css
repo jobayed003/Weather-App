@@ -151,7 +151,7 @@ body {
     width: 93.5%;
   }
 }
-.error-message .search__field .auto-search__field li {
+.error-message .search__field .auto-search__field option {
   background-color: #6e707a;
   list-style: none;
   text-align: left;
@@ -160,7 +160,7 @@ body {
   cursor: pointer;
   border-radius: 3px;
 }
-.error-message .search__field .auto-search__field li:hover {
+.error-message .search__field .auto-search__field option:hover {
   color: #6e707a;
   background-color: white;
 }
