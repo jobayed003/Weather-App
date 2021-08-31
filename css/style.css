@@ -111,17 +111,30 @@ body {
 }
 
 .error-message {
-  height: 100vh;
+  height: 80vh;
   text-align: center;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #a09fb1;
-  position: relative;
 }
 .error-message .search__field {
   padding: 0.5rem;
   width: 22rem;
+  position: relative;
+}
+.error-message .search__field i {
+  color: #333;
+  font-size: 20px;
+  position: absolute;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.error-message .search__field i::selection {
+  color: #88869d;
 }
 @media (max-width: 20.625rem) {
   .error-message .search__field {
@@ -129,7 +142,14 @@ body {
   }
 }
 .error-message .search__field .auto-search__field {
+  position: absolute;
+  width: 95.5%;
   padding: 0;
+}
+@media (max-width: 20.625rem) {
+  .error-message .search__field .auto-search__field {
+    width: 93.5%;
+  }
 }
 .error-message .search__field .auto-search__field li {
   background-color: #6e707a;
@@ -208,6 +228,25 @@ body {
   align-items: center;
   width: 100%;
   padding: 0.5rem;
+  position: relative;
+}
+.main-weather__search-area i {
+  color: #333;
+  font-size: 20px;
+  position: absolute;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.main-weather__search-area i::selection {
+  color: #88869d;
+}
+@media (max-width: 60.3125rem) {
+  .main-weather__search-area i {
+    right: 4.5rem;
+  }
 }
 @media (max-width: 60.3125rem) {
   .main-weather__search-area {
@@ -216,6 +255,8 @@ body {
 }
 .main-weather__search-area .search {
   width: 100%;
+  color: #6e707a;
+  position: relative;
 }
 .main-weather__search-area .search .auto-search__field {
   padding: 0;

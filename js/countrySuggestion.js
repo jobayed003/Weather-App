@@ -5,7 +5,6 @@ import * as name from './config.js';
 name.query.onkeyup = e => {
   let userData = e.target.value;
   let emptyArray = [];
-
   if (userData) {
     emptyArray = name.countries.filter(data => {
       // Filtering values of the emtpty array
@@ -23,8 +22,8 @@ name.query.onkeyup = e => {
       el.addEventListener('click', () => {
         let selectUserData = el.textContent;
         name.query.value = selectUserData;
-        console.log(name.query.value);
         name.suggBox.classList.add('hidden');
+        name.query.focus();
       });
     });
   } else {
@@ -46,7 +45,6 @@ const showSuggestions = list => {
 name.secondQuery.onkeyup = e => {
   let userData = e.target.value;
   let emptyArray = [];
-
   if (userData) {
     emptyArray = name.countries.filter(data => {
       // Filtering values of the emtpty array
@@ -64,8 +62,8 @@ name.secondQuery.onkeyup = e => {
       el.addEventListener('click', () => {
         let selectUserData = el.textContent;
         name.secondQuery.value = selectUserData;
-        console.log(name.secondQuery.value);
         name.suggBox2.classList.add('hidden');
+        name.secondQuery.focus();
       });
     });
   } else {

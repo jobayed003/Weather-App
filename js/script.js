@@ -46,19 +46,32 @@ if (navigator.geolocation) {
 }
 
 // Implementing the search results for searchig for location
-name.search.addEventListener('submit', e => {
-  e.preventDefault();
+const eventListener1 = () => {
   loadingSpinner();
   searchResult(name.query.value);
   searchWeather(name.query.value);
   name.query.value = '';
-});
+  name.suggBox.classList.add('hidden');
+};
 
-name.searchField.addEventListener('submit', e => {
-  e.preventDefault();
+const eventListener2 = () => {
   removeError();
   loadingSpinner();
   searchResult(name.secondQuery.value);
   searchWeather(name.secondQuery.value);
   name.secondQuery.value = '';
+  name.suggBox2.classList.add('hidden');
+};
+
+name.search.addEventListener('submit', e => {
+  e.preventDefault();
+  eventListener1();
 });
+
+name.searchField.addEventListener('submit', e => {
+  e.preventDefault();
+  eventListener2();
+});
+
+name.iconSearch1.addEventListener('click', eventListener1);
+name.iconSearch2.addEventListener('click', eventListener2);

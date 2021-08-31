@@ -98,33 +98,52 @@
 }
 
 .error-message {
-  height: 100vh;
+  height: 80vh;
   text-align: center;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #a09fb1;
-  position: relative;
 
   & .search__field {
     padding: 0.5rem;
     width: 22rem;
+    position: relative;
+
+    & i {
+      color: #333;
+      font-size: 20px;
+      position: absolute;
+      z-index: 100;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+      &::selection {
+        color: #88869d;
+      }
+    }
 
     @media (max-width: 20.625rem) {
       width: 15rem;
     }
 
     .auto-search__field {
+      position: absolute;
+      width: 95.5%;
       padding: 0;
-      // pointer-events: none;
-      // overflow-y: auto;
+
+      @media (max-width: 20.625rem) {
+        width: 93.5%;
+      }
 
       & li {
         background-color: #6e707a;
         list-style: none;
         text-align: left;
         color: white;
-        // display: none;
         padding: 8px 6px;
         cursor: pointer;
         border-radius: 3px;

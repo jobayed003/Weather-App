@@ -44,6 +44,27 @@
     align-items: center;
     width: 100%;
     padding: 0.5rem;
+    position: relative;
+
+    & i {
+      color: #333;
+      font-size: 20px;
+      position: absolute;
+      z-index: 100;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+      &::selection {
+        color: #88869d;
+      }
+
+      @media (max-width: 60.3125rem) {
+        right: 4.5rem;
+      }
+    }
 
     @media (max-width: 60.3125rem) {
       padding-inline: 4rem;
@@ -51,6 +72,8 @@
 
     .search {
       width: 100%;
+      color: #6e707a;
+      position: relative;
 
       .auto-search__field {
         @media (min-width: 60.3125rem) {
@@ -65,7 +88,6 @@
           list-style: none;
           text-align: left;
           color: white;
-          // display: none;
           padding: 8px 6px;
           cursor: default;
           border-radius: 3px;

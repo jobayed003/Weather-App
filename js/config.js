@@ -7,6 +7,9 @@ export const searchField = document.querySelector('.search__field');
 export const suggBox = search.querySelector('.auto-search__field');
 export const suggBox2 = searchField.querySelector('.auto-search__field');
 
+export const iconSearch1 = document.getElementById('search-button');
+export const iconSearch2 = document.getElementById('search-button2');
+
 export const query = search.querySelector('.input-area');
 export const secondQuery = document.querySelector('.input');
 
@@ -153,6 +156,7 @@ export const countries = [
   'Liechtenstein',
   'Lithuania',
   'Luxembourg',
+  'London',
   'Macau',
   'Macedonia',
   'Madagascar',
