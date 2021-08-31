@@ -151,7 +151,7 @@ body {
     width: 93.5%;
   }
 }
-.error-message .search__field .auto-search__field option {
+.error-message .search__field .auto-search__field li {
   background-color: #6e707a;
   list-style: none;
   text-align: left;
@@ -160,7 +160,7 @@ body {
   cursor: pointer;
   border-radius: 3px;
 }
-.error-message .search__field .auto-search__field option:hover {
+.error-message .search__field .auto-search__field li:hover {
   color: #6e707a;
   background-color: white;
 }
@@ -265,7 +265,7 @@ body {
 @media (min-width: 60.3125rem) {
   .main-weather__search-area .search .auto-search__field {
     position: absolute;
-    width: 94.5%;
+    width: 100%;
   }
 }
 .main-weather__search-area .search .auto-search__field li {

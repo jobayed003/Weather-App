@@ -12,7 +12,7 @@ name.query.onkeyup = e => {
     });
 
     emptyArray = emptyArray.map(data => {
-      return (data = `<option value='${data}'></option>`);
+      return (data = '<li>' + data + '</li>');
     });
     showSuggestions(emptyArray);
     name.suggBox.classList.remove('hidden');
@@ -35,7 +35,7 @@ const showSuggestions = list => {
   let listData;
   if (!list.length) {
     let userValue = name.query.value;
-    listData = `<option value='${userValue}'></option>`;
+    listData = '<li>' + userValue + '</li>';
   } else {
     listData = list.join('');
   }
@@ -51,7 +51,7 @@ name.secondQuery.onkeyup = e => {
       return data.toLowerCase().startsWith(userData.toLowerCase());
     });
     emptyArray = emptyArray.map(data => {
-      return (data = `<option value='${data}'></option>`);
+      return (data = '<li>' + data + '</li>');
     });
     showSuggestions2(emptyArray);
 
@@ -75,7 +75,7 @@ const showSuggestions2 = list => {
   let listData;
   if (!list.length) {
     let userValue = name.secondQuery.value;
-    listData = `<option value='${userValue}'></option>`;
+    listData = '<li>' + userValue + '</li>';
   } else {
     listData = list.join('');
   }
