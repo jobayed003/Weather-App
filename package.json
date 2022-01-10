@@ -8,7 +8,7 @@
     "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass",
     "compile": "sass sass/main.scss css/style.comp.css",
-    "concat": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css ",
+    "concat": "concat -o css/style.concat.css css/style.comp.css ",
     "prefix": "postcss css/style.concat.css --use autoprefixer -o css/style.prefix.css",
     "compress": "sass css/style.prefix.css css/style.css --style compressed",
     "build": "npm-run-all compile concat prefix compress"
