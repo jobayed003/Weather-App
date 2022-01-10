@@ -17,7 +17,6 @@ if (navigator.geolocation) {
       const { latitude: lat, longitude: long } = pos.coords;
 
       loadingSpinner();
-      name.main.classList.add('hidden');
       const weather = async () => {
         try {
           const resLoad = await fetch(
